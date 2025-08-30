@@ -183,8 +183,8 @@ export default function Features() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Demo Coming Soon!</h3>
               <p className="text-gray-600 mb-6">
-                We're putting the finishing touches on our interactive demo. 
-                Sign up to be notified when it's ready!
+                We&apos;re putting the finishing touches on our interactive demo. 
+                Sign up to be notified when it&apos;s ready!
               </p>
               <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
                 Notify Me

@@ -9,7 +9,17 @@ interface Testimonial {
   type: string
   quote: string
   avatar: string
-  stats?: any
+  stats?: {
+    type: string
+    selfAwareness?: number
+    decisionMaking?: number
+    emotionalIntelligence?: number
+    assessments?: number
+    accuracy?: number
+    posts?: number
+    connections?: number
+    votes?: number
+  }
 }
 
 export default function Testimonials() {
@@ -75,7 +85,7 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(nextSlide, 8000)
     return () => clearInterval(interval)
-  }, [])
+  }, [nextSlide])
 
   const renderStats = (testimonial: Testimonial) => {
     if (testimonial.stats?.type === 'growth') {
@@ -221,7 +231,7 @@ export default function Testimonials() {
                           ))}
                         </div>
                         <blockquote className="text-2xl lg:text-3xl font-light leading-relaxed mb-8 text-gray-100">
-                          "{testimonial.quote}"
+                          &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                         <div className="flex items-center">
                           <div className={`w-16 h-16 bg-gradient-to-br ${

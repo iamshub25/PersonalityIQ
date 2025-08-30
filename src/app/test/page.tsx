@@ -106,7 +106,7 @@ const getPersonalityResult = (answers: string[]) => {
 export default function TestPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<string[]>([])
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<{ title: string; description: string; traits: string[] } | null>(null)
   const [isComplete, setIsComplete] = useState(false)
 
   const handleAnswer = (value: string) => {

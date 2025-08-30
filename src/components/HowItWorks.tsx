@@ -139,8 +139,8 @@ export default function HowItWorks() {
               <h4 className="font-semibold text-gray-900 mb-2">Sarah M.</h4>
               <p className="text-sm text-gray-600 mb-3">INFP • Marketing Manager</p>
               <p className="text-gray-700 leading-relaxed">
-                "Understanding my personality type helped me find a career path that 
-                aligns with my values. The insights keep me focused on my goals."
+                &ldquo;Understanding my personality type helped me find a career path that 
+                aligns with my values. The insights keep me focused on my goals.&rdquo;
               </p>
             </div>
             
@@ -152,8 +152,8 @@ export default function HowItWorks() {
               <h4 className="font-semibold text-gray-900 mb-2">Michael R.</h4>
               <p className="text-sm text-gray-600 mb-3">ENTJ • Entrepreneur</p>
               <p className="text-gray-700 leading-relaxed">
-                "The personality insights helped me become a better leader. 
-                I now understand my team's needs and communicate more effectively."
+                &ldquo;The personality insights helped me become a better leader. 
+                I now understand my team&apos;s needs and communicate more effectively.&rdquo;
               </p>
             </div>
             
@@ -165,8 +165,8 @@ export default function HowItWorks() {
               <h4 className="font-semibold text-gray-900 mb-2">Emma L.</h4>
               <p className="text-sm text-gray-600 mb-3">ISFJ • Teacher</p>
               <p className="text-gray-700 leading-relaxed">
-                "The personality assessment has improved my self-awareness dramatically. 
-                I'm more confident in my decisions and relationships."
+                &ldquo;The personality assessment has improved my self-awareness dramatically. 
+                I&apos;m more confident in my decisions and relationships.&rdquo;
               </p>
             </div>
           </div>

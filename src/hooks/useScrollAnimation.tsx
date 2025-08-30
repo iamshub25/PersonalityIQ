@@ -22,9 +22,10 @@ export function useScrollAnimation() {
       observer.observe(ref.current)
     }
 
+    const currentRef = ref.current
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [])
@@ -53,9 +54,9 @@ export function useToast() {
 }
 
 // Utility functions
-export const debounce = (func: Function, wait: number) => {
+export const debounce = (func: (...args: unknown[]) => void, wait: number) => {
   let timeout: NodeJS.Timeout
-  return function executedFunction(...args: any[]) {
+  return function executedFunction(...args: unknown[]) {
     const later = () => {
       clearTimeout(timeout)
       func(...args)
@@ -65,11 +66,11 @@ export const debounce = (func: Function, wait: number) => {
   }
 }
 
-export const throttle = (func: Function, limit: number) => {
+export const throttle = (func: (...args: unknown[]) => void, limit: number) => {
   let inThrottle: boolean
-  return function(this: any, ...args: any[]) {
+  return function(...args: unknown[]) {
     if (!inThrottle) {
-      func.apply(this, args)
+      func(...args)
       inThrottle = true
       setTimeout(() => inThrottle = false, limit)
     }

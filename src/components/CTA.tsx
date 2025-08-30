@@ -26,7 +26,7 @@ export default function CTA() {
     },
     {
       question: "Do you offer refunds?",
-      answer: "We offer a 30-day money-back guarantee. If you're not satisfied, contact our support team for a full refund."
+      answer: "We offer a 30-day money-back guarantee. If you&apos;re not satisfied, contact our support team for a full refund."
     },
     {
       question: "Is there a mobile app?",
@@ -46,9 +46,7 @@ export default function CTA() {
     setOpenFAQ(openFAQ === index ? null : index)
   }
 
-  const getPrice = (monthly: number, yearly: number) => {
-    return isYearly ? yearly : monthly
-  }
+
 
   return (
     <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
