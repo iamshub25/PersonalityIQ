@@ -115,10 +115,10 @@ export default function Features() {
               
               <div className="text-center">
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <i className="fas fa-mobile-alt text-white"></i>
+                  <i className="fas fa-chart-bar text-white"></i>
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Mobile App</h4>
-                <p className="text-sm text-gray-600">Access your results anywhere</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Analytics</h4>
+                <p className="text-sm text-gray-600">Track your personality insights</p>
               </div>
               
               <div className="text-center">

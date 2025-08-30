@@ -145,7 +145,7 @@ export default function Footer() {
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Personality Test</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Career Insights</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Growth Analytics</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Mobile App</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Web Platform</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Team Features</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Integrations</a></li>
               </ul>
@@ -201,39 +201,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* App Download Section */}
-        <div className="py-12 border-t border-white/10">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Download Our App</h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Take your personal growth journey on the go. Available on all platforms.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#" className="flex items-center bg-white/10 hover:bg-white/20 rounded-lg px-6 py-3 transition-colors">
-              <i className="fab fa-apple text-2xl mr-3"></i>
-              <div className="text-left">
-                <div className="text-xs text-gray-300">Download on the</div>
-                <div className="font-semibold">App Store</div>
-              </div>
-            </a>
-            <a href="#" className="flex items-center bg-white/10 hover:bg-white/20 rounded-lg px-6 py-3 transition-colors">
-              <i className="fab fa-google-play text-2xl mr-3"></i>
-              <div className="text-left">
-                <div className="text-xs text-gray-300">Get it on</div>
-                <div className="font-semibold">Google Play</div>
-              </div>
-            </a>
-            <a href="#" className="flex items-center bg-white/10 hover:bg-white/20 rounded-lg px-6 py-3 transition-colors">
-              <i className="fab fa-windows text-2xl mr-3"></i>
-              <div className="text-left">
-                <div className="text-xs text-gray-300">Available on</div>
-                <div className="font-semibold">Microsoft Store</div>
-              </div>
-            </a>
-          </div>
-        </div>
+
 
         {/* Bottom Footer */}
         <div className="py-8 border-t border-white/10">

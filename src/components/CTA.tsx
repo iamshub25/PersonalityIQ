@@ -29,8 +29,8 @@ export default function CTA() {
       answer: "We offer a 30-day money-back guarantee. If you&apos;re not satisfied, contact our support team for a full refund."
     },
     {
-      question: "Is there a mobile app?",
-      answer: "Yes! Our mobile app is available for iOS and Android. Journal on-the-go and sync across all your devices."
+      question: "Can I access my results later?",
+      answer: "Yes! Your personality results and insights are saved to your account and can be accessed anytime through our web platform."
     },
     {
       question: "How accurate are the personality assessments?",
