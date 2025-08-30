@@ -152,15 +152,15 @@ export default function Testimonials() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-sm">Posts Shared</span>
-              <span className="text-lg font-semibold text-pink-400">{testimonial.stats.posts}</span>
+              <span className="text-lg font-semibold text-pink-400">{testimonial.stats?.posts}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm">Connections Made</span>
-              <span className="text-lg font-semibold text-orange-400">{testimonial.stats.connections}</span>
+              <span className="text-lg font-semibold text-orange-400">{testimonial.stats?.connections}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm">Helpful Votes</span>
-              <span className="text-lg font-semibold text-yellow-400">{testimonial.stats.votes}</span>
+              <span className="text-lg font-semibold text-yellow-400">{testimonial.stats?.votes}</span>
             </div>
             <div className="mt-4 pt-4 border-t border-white/10">
               <div className="text-center">
