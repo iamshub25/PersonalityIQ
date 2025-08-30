@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 interface Testimonial {
   id: number
@@ -69,9 +69,9 @@ export default function Testimonials() {
     }
   ]
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length)
-  }
+  }, [testimonials.length])
 
   const prevSlide = () => {
     setCurrentSlide((prev) => prev === 0 ? testimonials.length - 1 : prev - 1)

@@ -66,7 +66,7 @@ export default function CTA() {
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Growth Plan</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            Start free and upgrade when you're ready to unlock your full potential
+            Start free and upgrade when you&apos;re ready to unlock your full potential
           </p>
           
           {/* Toggle */}
