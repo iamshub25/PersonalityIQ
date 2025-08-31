@@ -4,11 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Hero() {
-  const [isClient, setIsClient] = useState(false)
 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
   const handleStartAssessment = () => {
     const featuresSection = document.getElementById('features')
     if (featuresSection) {
@@ -35,7 +31,7 @@ export default function Hero() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 tracking-tight">
-              It's time to feel better about
+              It&apos;s time to feel better about
               <span className="bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 bg-clip-text text-transparent block">
                 your work and yourself.
               </span>

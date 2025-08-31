@@ -31,6 +31,7 @@ export default function RootLayout({
         <script 
           type="module" 
           src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+          async
         ></script>
       </head>
       <body className={`${inter.className} touch-manipulation safe-area-padding`}>
