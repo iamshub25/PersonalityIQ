@@ -180,13 +180,13 @@ export default function HowItWorks() {
             Start with our free assessment today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <button 
-              onClick={handleStartAssessment}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-xl"
+            <a 
+              href="/test"
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-xl"
             >
               <i className="fas fa-rocket mr-2"></i>
               Start Free Assessment
-            </button>
+            </a>
             <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200">
               <i className="fas fa-play mr-2"></i>
               Watch Demo Video

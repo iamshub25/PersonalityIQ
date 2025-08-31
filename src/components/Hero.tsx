@@ -6,10 +6,7 @@ import Image from 'next/image'
 export default function Hero() {
 
   const handleStartAssessment = () => {
-    const featuresSection = document.getElementById('features')
-    if (featuresSection) {
-      featuresSection.scrollIntoView({ behavior: 'smooth' })
-    }
+    window.location.href = '/test'
   }
 
   return (
@@ -21,10 +18,10 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[600px] h-80 sm:h-[600px] bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '-4s' }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 py-16 lg:py-0">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center max-w-8xl mx-auto">
           {/* Left Content */}
-          <div className="animate-fade-in text-center lg:text-left">
+          <div className="animate-fade-in text-center lg:text-left lg:col-span-3">
             <div className="mb-4 mt-6">
               <span className="inline-block px-3 py-2 sm:px-4 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium border border-white/20">
                 ✨ AI-Powered Insights
@@ -84,7 +81,7 @@ export default function Hero() {
           </div>
           
           {/* Enhanced Right Content */}
-          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <div className="animate-fade-in lg:col-span-2" style={{ animationDelay: '300ms' }}>
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl sm:rounded-3xl blur-2xl"></div>
               <div className="relative z-10 w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5">

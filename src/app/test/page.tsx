@@ -1,173 +1,153 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-interface Question {
-  id: number
-  question: string
-  options: { text: string; value: string }[]
-}
-
-const questions: Question[] = [
+const questions = [
   {
     id: 1,
-    question: "In social situations, you usually:",
+    question: "How do you typically handle stressful situations?",
     options: [
-      { text: "Take charge and lead conversations", value: "E" },
-      { text: "Listen and contribute when needed", value: "I" },
-      { text: "Prefer one-on-one interactions", value: "I" }
+      { text: "I stay calm and think through solutions", value: "analytical" },
+      { text: "I seek support from friends or family", value: "social" },
+      { text: "I take time alone to process my feelings", value: "introspective" },
+      { text: "I jump into action to solve the problem", value: "action-oriented" }
     ]
   },
   {
     id: 2,
-    question: "When making decisions, you rely more on:",
+    question: "What energizes you most?",
     options: [
-      { text: "Logic and facts", value: "T" },
-      { text: "Personal values and feelings", value: "F" },
-      { text: "Past experiences", value: "T" }
+      { text: "Being around people and socializing", value: "social" },
+      { text: "Working on challenging problems", value: "analytical" },
+      { text: "Quiet time for reflection", value: "introspective" },
+      { text: "Taking on new adventures", value: "action-oriented" }
     ]
   },
   {
     id: 3,
-    question: "You prefer to:",
+    question: "How do you make important decisions?",
     options: [
-      { text: "Plan everything in advance", value: "J" },
-      { text: "Keep your options open", value: "P" },
-      { text: "Go with the flow", value: "P" }
+      { text: "I analyze all the facts and data", value: "analytical" },
+      { text: "I trust my gut feelings", value: "introspective" },
+      { text: "I discuss with others to get their input", value: "social" },
+      { text: "I make quick decisions and adjust as needed", value: "action-oriented" }
     ]
   },
   {
     id: 4,
-    question: "When learning something new, you:",
+    question: "What describes your ideal weekend?",
     options: [
-      { text: "Focus on practical applications", value: "S" },
-      { text: "Look for patterns and possibilities", value: "N" },
-      { text: "Connect it to bigger concepts", value: "N" }
+      { text: "Hosting a party with friends", value: "social" },
+      { text: "Reading a book or learning something new", value: "analytical" },
+      { text: "Going on an outdoor adventure", value: "action-oriented" },
+      { text: "Having quiet time for hobbies", value: "introspective" }
     ]
   },
   {
     id: 5,
-    question: "At work, you're most motivated by:",
+    question: "How do you approach new challenges?",
     options: [
-      { text: "Clear goals and deadlines", value: "J" },
-      { text: "Creative freedom and flexibility", value: "P" },
-      { text: "Helping others succeed", value: "F" }
+      { text: "I research thoroughly before starting", value: "analytical" },
+      { text: "I dive in and learn as I go", value: "action-oriented" },
+      { text: "I collaborate with others for support", value: "social" },
+      { text: "I reflect on how it aligns with my values", value: "introspective" }
     ]
   }
 ]
 
-const getPersonalityResult = (answers: string[]) => {
-  const counts = { E: 0, I: 0, T: 0, F: 0, J: 0, P: 0, S: 0, N: 0 }
-  answers.forEach(answer => counts[answer as keyof typeof counts]++)
-  
-  const type = 
-    (counts.E > counts.I ? 'E' : 'I') +
-    (counts.S > counts.N ? 'S' : 'N') +
-    (counts.T > counts.F ? 'T' : 'F') +
-    (counts.J > counts.P ? 'J' : 'P')
-  
-  const results: Record<string, { title: string; description: string; traits: string[] }> = {
-    'ESTJ': {
-      title: 'The Executive',
-      description: 'You are organized, practical, and natural leader who thrives on efficiency and getting things done.',
-      traits: ['Natural leadership', 'Goal-oriented', 'Practical problem solver']
-    },
-    'ISTJ': {
-      title: 'The Logistician',
-      description: 'You are reliable, practical, and fact-minded. You value tradition and loyalty.',
-      traits: ['Highly reliable', 'Detail-oriented', 'Strong work ethic']
-    },
-    'ENFP': {
-      title: 'The Campaigner',
-      description: 'You are enthusiastic, creative, and sociable. You see life as full of possibilities.',
-      traits: ['Highly creative', 'Excellent communicator', 'Inspiring to others']
-    },
-    'INFP': {
-      title: 'The Mediator',
-      description: 'You are idealistic, loyal to your values, and seek to help people reach their potential.',
-      traits: ['Strong values', 'Creative and imaginative', 'Empathetic']
-    },
-    'ENTJ': {
-      title: 'The Commander',
-      description: 'You are bold, imaginative, and strong-willed leader who finds a way or makes one.',
-      traits: ['Strategic thinking', 'Natural leadership', 'Highly ambitious']
-    },
-    'INTJ': {
-      title: 'The Architect',
-      description: 'You are imaginative and strategic thinker, with a plan for everything.',
-      traits: ['Independent thinking', 'Strategic planning', 'High standards']
-    }
-  }
-  
-  return results[type] || results['ENFP']
-}
-
 export default function TestPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<string[]>([])
-  const [result, setResult] = useState<{ title: string; description: string; traits: string[] } | null>(null)
-  const [isComplete, setIsComplete] = useState(false)
+  const [showResult, setShowResult] = useState(false)
+  const router = useRouter()
 
   const handleAnswer = (value: string) => {
     const newAnswers = [...answers, value]
     setAnswers(newAnswers)
-    
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
     } else {
-      const personalityResult = getPersonalityResult(newAnswers)
-      setResult(personalityResult)
-      setIsComplete(true)
+      setShowResult(true)
     }
   }
 
-  const resetTest = () => {
-    setCurrentQuestion(0)
-    setAnswers([])
-    setResult(null)
-    setIsComplete(false)
+  const getResult = () => {
+    const counts = answers.reduce((acc, answer) => {
+      acc[answer] = (acc[answer] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+
+    const dominant = Object.entries(counts).sort(([,a], [,b]) => b - a)[0][0]
+
+    const results = {
+      analytical: {
+        type: "The Analyst",
+        description: "You approach life with logic and careful consideration. You excel at problem-solving and making well-informed decisions.",
+        traits: ["Logical", "Detail-oriented", "Strategic", "Methodical"],
+        color: "from-blue-500 to-indigo-600"
+      },
+      social: {
+        type: "The Connector",
+        description: "You thrive on relationships and collaboration. You have natural leadership abilities and excel in team environments.",
+        traits: ["Empathetic", "Collaborative", "Inspiring", "Communicative"],
+        color: "from-green-500 to-emerald-600"
+      },
+      introspective: {
+        type: "The Reflector",
+        description: "You value deep thinking and authentic connections. You have strong intuition and care deeply about personal values.",
+        traits: ["Thoughtful", "Intuitive", "Authentic", "Creative"],
+        color: "from-purple-500 to-violet-600"
+      },
+      "action-oriented": {
+        type: "The Achiever",
+        description: "You are driven by results and love taking action. You adapt quickly and thrive in dynamic environments.",
+        traits: ["Dynamic", "Adaptable", "Results-focused", "Energetic"],
+        color: "from-orange-500 to-red-600"
+      }
+    }
+
+    return results[dominant as keyof typeof results]
   }
 
-  if (isComplete && result) {
+  if (showResult) {
+    const result = getResult()
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full bg-white rounded-3xl p-8 shadow-2xl">
           <div className="text-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <i className="fas fa-check text-white text-3xl"></i>
+            <div className={`w-24 h-24 bg-gradient-to-r ${result.color} rounded-full mx-auto mb-6 flex items-center justify-center`}>
+              <span className="text-3xl text-white font-bold">{result.type.charAt(4)}</span>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Your Personality Type</h1>
-            <h2 className="text-2xl font-semibold text-blue-600">{result.title}</h2>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{result.type}</h1>
+            <p className="text-lg text-gray-600 leading-relaxed">{result.description}</p>
           </div>
-          
+
           <div className="mb-8">
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">{result.description}</p>
-            
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Your Key Traits:</h3>
-            <ul className="space-y-2">
-              {result.traits.map((trait: string, index: number) => (
-                <li key={index} className="flex items-center">
-                  <i className="fas fa-star text-yellow-500 mr-3"></i>
-                  <span className="text-gray-700">{trait}</span>
-                </li>
+            <div className="grid grid-cols-2 gap-3">
+              {result.traits.map((trait, index) => (
+                <div key={index} className="bg-gray-50 rounded-lg p-3 text-center">
+                  <span className="font-medium text-gray-800">{trait}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <button 
-              onClick={resetTest}
-              className="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors"
+            <button
+              onClick={() => window.location.reload()}
+              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all"
             >
               Take Test Again
             </button>
-            <Link 
-              href="/"
-              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold text-center hover:from-blue-700 hover:to-purple-700 transition-all"
+            <button
+              onClick={() => router.push('/')}
+              className="flex-1 border-2 border-gray-300 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all"
             >
               Back to Home
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -175,15 +155,13 @@ export default function TestPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl p-8 shadow-2xl">
         <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <Link href="/" className="text-blue-600 hover:text-blue-700">
-              <i className="fas fa-arrow-left mr-2"></i>Back
-            </Link>
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-2xl font-bold text-gray-900">Personality Assessment</h1>
             <span className="text-sm text-gray-500">
-              Question {currentQuestion + 1} of {questions.length}
+              {currentQuestion + 1} of {questions.length}
             </span>
           </div>
           
@@ -196,21 +174,25 @@ export default function TestPage() {
         </div>
 
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">
             {questions[currentQuestion].question}
-          </h1>
+          </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-3">
             {questions[currentQuestion].options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswer(option.value)}
-                className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200"
+                className="w-full text-left p-4 bg-gray-50 hover:bg-blue-50 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-blue-200"
               >
-                <span className="text-gray-800">{option.text}</span>
+                <span className="font-medium text-gray-800">{option.text}</span>
               </button>
             ))}
           </div>
+        </div>
+
+        <div className="text-center text-sm text-gray-500">
+          Click on the option that best describes you
         </div>
       </div>
     </div>

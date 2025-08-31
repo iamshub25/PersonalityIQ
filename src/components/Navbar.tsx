@@ -26,7 +26,7 @@ export default function Navbar() {
   const navItems = [
     { label: 'Features', href: 'features' },
     { label: 'How It Works', href: 'how-it-works' },
-    { label: 'Test', href: '/test', isExternal: true },
+    // { label: 'Test', href: '/test', isExternal: true },
     { label: 'Testimonials', href: 'testimonials' },
     { label: 'Pricing', href: 'pricing' }
   ]
@@ -77,9 +77,9 @@ export default function Navbar() {
             <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base">
               Sign In
             </button>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm lg:text-base">
+            <a href="/test" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm lg:text-base">
               Get Started
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -118,9 +118,9 @@ export default function Navbar() {
                 <button className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium mb-2 text-sm sm:text-base">
                   Sign In
                 </button>
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm sm:text-base">
+                <a href="/test" className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm sm:text-base text-center">
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>
