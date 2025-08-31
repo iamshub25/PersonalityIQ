@@ -10,10 +10,10 @@ export default function Features() {
 
   return (
     <>
-      <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="features" className="py-12 sm:py-16 bg-white">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Section Header */}
-          <div className="text-center mb-12 sm:mb-16 opacity-0 animate-fade-in">
+          <div className="text-center mb-8 sm:mb-12 opacity-0 animate-fade-in">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Everything You Need for 
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Self-Discovery</span>
@@ -25,16 +25,16 @@ export default function Features() {
           </div>
 
           {/* Main Features Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {/* Feature 1: Personality Assessment */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-blue-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-blue-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
                 <i className="fas fa-user-check text-white text-lg sm:text-2xl"></i>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 16 Personality Types
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                 Take our comprehensive assessment based on proven psychological frameworks. 
                 Discover your unique personality type with detailed insights into your 
                 strengths, preferences, and growth areas.
@@ -48,14 +48,14 @@ export default function Features() {
             </div>
 
             {/* Feature 2: Career Insights */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-purple-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
-                <i className="fas fa-briefcase text-white text-2xl"></i>
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-purple-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                <i className="fas fa-briefcase text-white text-lg sm:text-2xl"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                 Career & Life Insights
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                 Discover career paths that align with your personality type. Get personalized 
                 recommendations for professional development, relationship compatibility, 
                 and life decisions based on your unique traits.
@@ -69,14 +69,14 @@ export default function Features() {
             </div>
 
             {/* Feature 3: Growth Tracking */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-green-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                <i className="fas fa-chart-line text-white text-2xl"></i>
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-green-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                <i className="fas fa-chart-line text-white text-lg sm:text-2xl"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                 Progress Analytics
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                 Get detailed reports and analytics about your personality traits. 
                 Compare your results with others, track assessment history, and 
                 receive personalized recommendations for growth.
@@ -91,8 +91,8 @@ export default function Features() {
           </div>
 
           {/* Additional Features */}
-          <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-12 sm:mb-16">
-            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
+          <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">
               More Ways to Grow
             </h3>
             
@@ -132,7 +132,7 @@ export default function Features() {
           </div>
 
           {/* Interactive Demo */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white">
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">See It In Action</h3>

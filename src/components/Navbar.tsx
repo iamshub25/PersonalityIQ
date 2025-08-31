@@ -40,13 +40,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16">
+        <div className="flex justify-between items-center h-12 sm:h-14">
           {/* Logo */}
           <div 
             onClick={() => scrollToSection('hero')}
             className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
           >
-            PersonalityIQ
+            Second Draft
           </div>
 
           {/* Desktop Navigation */}
@@ -83,8 +83,8 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-3 sm:py-4">
-            <div className="space-y-3 sm:space-y-4">
+          <div className="md:hidden bg-white border-t border-gray-200 py-2 sm:py-3">
+            <div className="space-y-2 sm:space-y-3">
               {navItems.map((item) => (
                 <button
                   key={item.href}
@@ -94,7 +94,7 @@ export default function Navbar() {
                   {item.label}
                 </button>
               ))}
-              <div className="px-4 pt-3 sm:pt-4 border-t border-gray-200">
+              <div className="px-4 pt-2 sm:pt-3 border-t border-gray-200">
                 <button className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium mb-2 text-sm sm:text-base">
                   Sign In
                 </button>

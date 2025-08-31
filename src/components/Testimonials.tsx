@@ -175,7 +175,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-900 text-white relative overflow-hidden">
+    <section id="testimonials" className="py-8 sm:py-12 pb-4 sm:pb-6 bg-gray-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -184,7 +184,7 @@ export default function Testimonials() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             What Our Users Say
           </h2>
@@ -194,7 +194,7 @@ export default function Testimonials() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-400 mb-1 sm:mb-2">500K+</div>
             <div className="text-gray-300 text-xs sm:text-sm lg:text-base">Happy Users</div>
@@ -214,7 +214,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Slider */}
-        <div className="relative mb-12 sm:mb-16">
+        <div className="relative mb-8 sm:mb-12">
           <div className="overflow-hidden rounded-3xl">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
@@ -222,7 +222,7 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0">
-                  <div className="bg-white/5 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10">
+                  <div className="bg-white/5 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
                     <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                       <div>
                         <div className="flex mb-4 sm:mb-6 justify-center lg:justify-start">
@@ -230,7 +230,7 @@ export default function Testimonials() {
                             <i key={i} className="fas fa-star text-yellow-400 text-base sm:text-lg lg:text-xl"></i>
                           ))}
                         </div>
-                        <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light leading-relaxed mb-6 sm:mb-8 text-gray-100 text-center lg:text-left">
+                        <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light leading-relaxed mb-4 sm:mb-6 text-gray-100 text-center lg:text-left">
                           &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                         <div className="flex items-center justify-center lg:justify-start">
@@ -284,19 +284,6 @@ export default function Testimonials() {
                 }`}
               />
             ))}
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="text-center">
-          <div className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">Trusted by teams at</div>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 opacity-60">
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Google</div>
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Microsoft</div>
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Apple</div>
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Netflix</div>
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Spotify</div>
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold">Airbnb</div>
           </div>
         </div>
       </div>

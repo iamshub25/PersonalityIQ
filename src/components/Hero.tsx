@@ -10,7 +10,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white relative overflow-hidden min-h-screen flex items-center">
+    <section className="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white relative overflow-hidden min-h-screen flex items-center pt-5 pb-5">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-4 sm:left-20 w-48 sm:w-96 h-48 sm:h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -23,9 +23,9 @@ export default function Hero() {
           {/* Left Content */}
           <div className="animate-fade-in text-center lg:text-left lg:col-span-3">
             <div className="mb-4 mt-6">
-              <span className="inline-block px-3 py-2 sm:px-4 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium border border-white/20">
+              {/* <span className="inline-block px-3 py-2 sm:px-4 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium border border-white/20">
                 ✨ AI-Powered Insights
-              </span>
+              </span> */}
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 tracking-tight">
               It&apos;s time to feel better about
@@ -64,7 +64,7 @@ export default function Hero() {
             </div>
             
             {/* Enhanced Social Proof */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/20">
+            {/* <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/20">
               <div className="text-center">
                 <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">500K+</div>
                 <div className="text-white/80 text-xs sm:text-sm font-medium">Happy Users</div>
@@ -77,16 +77,16 @@ export default function Hero() {
                 <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">15M+</div>
                 <div className="text-white/80 text-xs sm:text-sm font-medium">Insights Generated</div>
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Enhanced Right Content */}
-          <div className="animate-fade-in lg:col-span-2" style={{ animationDelay: '300ms' }}>
+          <div className="animate-fade-in lg:col-span-2 hidden lg:block" style={{ animationDelay: '300ms' }}>
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl sm:rounded-3xl blur-2xl"></div>
               <div className="relative z-10 w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5">
                 <Image 
-                  src="https://res.cloudinary.com/dyd30abcs/image/upload/v1756640357/1_bdq5ez.png" 
+                  src="https://res.cloudinary.com/dyd30abcs/image/upload/v1756648527/24_jo8f3j.png" 
                   alt="Personality Assessment" 
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
