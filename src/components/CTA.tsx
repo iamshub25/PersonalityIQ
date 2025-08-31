@@ -61,11 +61,11 @@ export default function CTA() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Growth Plan</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
             Start free and upgrade when you&apos;re ready to unlock your full potential
           </p>
           
@@ -91,16 +91,16 @@ export default function CTA() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Free Plan */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Explorer</h3>
-              <div className="text-4xl font-bold text-gray-900 mb-2">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 max-w-md mx-auto">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Explorer</h3>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                 <span>$0</span>
-                <span className="text-lg text-gray-500 font-normal">/month</span>
+                <span className="text-base sm:text-lg text-gray-500 font-normal">/month</span>
               </div>
-              <p className="text-gray-600">Perfect for getting started</p>
+              <p className="text-gray-600 text-sm sm:text-base">Perfect for getting started</p>
             </div>
             
             <ul className="space-y-4 mb-8">
@@ -137,8 +137,8 @@ export default function CTA() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-lg">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
             Frequently Asked Questions
           </h3>
           
@@ -184,20 +184,20 @@ export default function CTA() {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center mt-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="text-center mt-12 sm:mt-16">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Ready to Transform Your Life?
           </h3>
-          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Join over 500,000 people who have already discovered their true potential. 
             Start your journey today with our free assessment.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-xl">
               <i className="fas fa-rocket mr-2"></i>
               Start Free Assessment
             </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200">
+            <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200">
               <i className="fas fa-calendar mr-2"></i>
               Schedule Demo
             </button>

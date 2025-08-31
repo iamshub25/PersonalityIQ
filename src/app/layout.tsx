@@ -19,12 +19,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta name="theme-color" content="#3b82f6" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        <script 
+          type="module" 
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} touch-manipulation safe-area-padding`}>
         <Navbar />
         {children}
       </body>
