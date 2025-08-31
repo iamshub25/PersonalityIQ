@@ -1,12 +1,7 @@
 'use client'
 
 export default function HowItWorks() {
-  const handleStartAssessment = () => {
-    const heroSection = document.getElementById('hero')
-    if (heroSection) {
-      heroSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+
 
   return (
     <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">

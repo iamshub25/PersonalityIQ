@@ -52,23 +52,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
-              item.isExternal ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
-                >
-                  {item.label}
-                </button>
-              )
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
+              >
+                {item.label}
+              </button>
             ))}
           </div>
 
@@ -96,23 +86,13 @@ export default function Navbar() {
           <div className="md:hidden bg-white border-t border-gray-200 py-3 sm:py-4">
             <div className="space-y-3 sm:space-y-4">
               {navItems.map((item) => (
-                item.isExternal ? (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm sm:text-base"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <button
-                    key={item.href}
-                    onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm sm:text-base"
-                  >
-                    {item.label}
-                  </button>
-                )
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm sm:text-base"
+                >
+                  {item.label}
+                </button>
               ))}
               <div className="px-4 pt-3 sm:pt-4 border-t border-gray-200">
                 <button className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium mb-2 text-sm sm:text-base">
