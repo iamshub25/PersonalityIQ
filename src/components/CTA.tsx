@@ -49,7 +49,7 @@ export default function CTA() {
 
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+    <section id="pricing" className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full">
@@ -60,8 +60,8 @@ export default function CTA() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        
+        {/* <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Growth Plan</span>
           </h2>
@@ -69,7 +69,7 @@ export default function CTA() {
             Start free and upgrade when you&apos;re ready to unlock your full potential
           </p>
           
-          {/* Toggle */}
+          
           <div className="flex items-center justify-center mb-8">
             <span className="text-gray-600 mr-3">Monthly</span>
             <button 
@@ -90,9 +90,9 @@ export default function CTA() {
           </div>
         </div>
 
-        {/* Pricing Cards */}
+        
         <div className="grid gap-6 sm:gap-8 mb-12 sm:mb-16">
-          {/* Free Plan */}
+
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 max-w-md mx-auto">
             <div className="text-center mb-6 sm:mb-8">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Explorer</h3>
@@ -134,15 +134,15 @@ export default function CTA() {
               Unlock Full Potential
             </a>
           </div>
-        </div>
+        </div> */}
 
         {/* FAQ Section */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-lg">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">
             Frequently Asked Questions
           </h3>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6">
             <div className="space-y-6">
               {faqs.slice(0, 3).map((faq, index) => (
                 <div key={index} className="faq-item">
@@ -184,7 +184,7 @@ export default function CTA() {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center mt-12 sm:mt-16">
+        {/* <div className="text-center mt-12 sm:mt-16">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Ready to Transform Your Life?
           </h3>
@@ -202,98 +202,8 @@ export default function CTA() {
               Schedule Demo
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
 }
-        //     <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors border border-gray-200">
-        //       Get Started Free
-        //     </button>
-        //   </div>
-
-        //   {/* Pro Plan - Featured */}
-        //   <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 shadow-2xl border border-blue-300 relative transform hover:scale-105 transition-transform duration-300">
-        //     {/* Popular Badge */}
-        //     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-        //       <span className="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
-        //     </div>
-            
-        //     <div className="text-center mb-8 text-white">
-        //       <h3 className="text-2xl font-bold mb-4">Growth</h3>
-        //       <div className="text-4xl font-bold mb-2">
-        //         <span>${getPrice(19, 15)}</span>
-        //         <span className="text-lg text-blue-100 font-normal">/month</span>
-        //       </div>
-        //       <p className="text-blue-100">For serious self-improvement</p>
-        //     </div>
-            
-        //     <ul className="space-y-4 mb-8 text-white">
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>Everything in Explorer</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>Unlimited journal entries</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>AI-powered insights</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>Advanced personality report</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>Goal tracking & analytics</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-400 mr-3"></i>
-        //         <span>Mobile app access</span>
-        //       </li>
-        //     </ul>
-            
-        //     <button className="w-full bg-white text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
-        //       Start Growing Today
-        //     </button>
-        //   </div>
-
-        //   {/* Premium Plan */}
-        //   <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        //     <div className="text-center mb-8">
-        //       <h3 className="text-2xl font-bold text-gray-900 mb-4">Master</h3>
-        //       <div className="text-4xl font-bold text-gray-900 mb-2">
-        //         <span>${getPrice(39, 31)}</span>
-        //         <span className="text-lg text-gray-500 font-normal">/month</span>
-        //       </div>
-        //       <p className="text-gray-600">For coaches and teams</p>
-        //     </div>
-            
-        //     <ul className="space-y-4 mb-8">
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">Everything in Growth</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">1-on-1 coaching sessions</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">Team collaboration tools</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">Priority support</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">Custom integrations</span>
-        //       </li>
-        //       <li className="flex items-center">
-        //         <i className="fas fa-check text-green-500 mr-3"></i>
-        //         <span className="text-gray-700">Advanced reporting</span>
-        //       </li>
-        //     </ul>
