@@ -26,8 +26,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
-
 
 @layer base {
   html {
@@ -42,5 +45,138 @@ body {
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  .floating-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  /* Fade in on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Card hover effects - reduced on mobile */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  
+  @media (hover: hover) {
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  /* Mobile-friendly card hover */
+  @media (hover: none) {
+    .card-hover:active {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Glassmorphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Mobile-optimized scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  @media (min-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2563eb, #7c3aed);
+  }
+  
+  /* Mobile touch improvements */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Prevent zoom on input focus on iOS */
+  @media screen and (max-width: 768px) {
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+  
+  /* Safe area padding for mobile devices */
+  .safe-area-padding {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Mobile-first responsive text */
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 3vw, 1.25rem);
+  }
+  
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 }

@@ -40,23 +40,23 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <div 
             onClick={() => scrollToSection('hero')}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
+            className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
           >
             PersonalityIQ
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               item.isExternal ? (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
                 >
                   {item.label}
                 </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
                 >
                   {item.label}
                 </button>
@@ -73,11 +73,11 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+            <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base">
               Sign In
             </button>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm lg:text-base">
               Get Started
             </button>
           </div>
@@ -85,22 +85,22 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-1.5 sm:p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-gray-700`}></i>
+            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-gray-700 text-lg sm:text-xl`}></i>
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4">
-            <div className="space-y-4">
+          <div className="md:hidden bg-white border-t border-gray-200 py-3 sm:py-4">
+            <div className="space-y-3 sm:space-y-4">
               {navItems.map((item) => (
                 item.isExternal ? (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm sm:text-base"
                   >
                     {item.label}
                   </a>
@@ -108,17 +108,17 @@ export default function Navbar() {
                   <button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm sm:text-base"
                   >
                     {item.label}
                   </button>
                 )
               ))}
-              <div className="px-4 pt-4 border-t border-gray-200">
-                <button className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium mb-2">
+              <div className="px-4 pt-3 sm:pt-4 border-t border-gray-200">
+                <button className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium mb-2 text-sm sm:text-base">
                   Sign In
                 </button>
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm sm:text-base">
                   Get Started
                 </button>
               </div>
