@@ -79,7 +79,7 @@ export default function Footer() {
             <div className="lg:col-span-2 sm:col-span-2">
               <div className="mb-6">
                 <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4">
-                  PersonalityIQ
+                  Second Draft
                 </div>
                 <p className="text-gray-300 leading-relaxed max-w-md text-sm sm:text-base">
                   Transform your life through AI-powered personality insights. 
@@ -144,7 +144,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-6 mb-4 md:mb-0">
               <div className="text-gray-300 text-xs sm:text-sm">
-                © 2024 PersonalityIQ. All rights reserved.
+                © 2024 SecondDraft. All rights reserved.
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
                 <a href="#" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">Privacy Policy</a>

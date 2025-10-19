@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'PersonalityIQ - Discover Your True Self',
+  title: 'SecondDraft - Discover Your True Self',
   description: 'AI-powered personality assessment that unlocks deep insights about your personality and accelerates your personal growth journey.',
   keywords: 'personality test, personality assessment, self-improvement, personal growth, psychology, career insights',
 }
@@ -34,7 +34,7 @@ export default function RootLayout({
           async
         ></script>
       </head>
-      <body className={`${inter.className} touch-manipulation safe-area-padding`}>
+      <body className={inter.className} suppressHydrationWarning>
         <Navbar />
         {children}
       </body>
