@@ -20,8 +20,7 @@ interface Links {
   label: string;
   href: string;
   icon: React.JSX.Element | React.ReactNode;
-}// Main Dashboard Component
-const ProfessionalDashboard = () => {
+}const ProfessionalDashboard = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"test" | "insights" | "tracking" | "profile">("test");
   const [sidebarOpen, setSidebarOpen] = useState(false);

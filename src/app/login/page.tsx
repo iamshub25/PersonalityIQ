@@ -44,7 +44,6 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ videoUrl }) => {
 const AuthPage = () => {
   const router = useRouter();
   const [mode, setMode] = useState<'login' | 'signup' | 'forgot'>('login');
-  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('user@example.com');
   const [password, setPassword] = useState('password123');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -518,10 +517,7 @@ const AuthPage = () => {
                 {mode === 'login' ? "Don't have an account?" : "Already have an account?"}{' '}
                 <button 
                   type="button"
-                  onClick={() => {
-                    setMode(mode === 'login' ? 'signup' : 'login')
-                    setIsLogin(mode !== 'login')
-                  }}
+                  onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
                   className="text-blue-600 hover:text-blue-700 font-medium transition-colors cursor-pointer"
                 >
                   {mode === 'login' ? 'Sign up for free' : 'Sign in'}

@@ -155,7 +155,7 @@ export const TrackingInterface = () => {
         {/* Weekly Progress */}
         <Card>
           <CardHeader>
-            <CardTitle>This Week's Progress</CardTitle>
+            <CardTitle>This Week&apos;s Progress</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
