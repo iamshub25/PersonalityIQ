@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 export const ProfileInterface = () => {
   const [userEmail, setUserEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [userData, setUserData] = useState<any>(null);
+  const [, setUserData] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const email = localStorage.getItem('userEmail') || localStorage.getItem('rememberedEmail');
@@ -20,7 +20,7 @@ export const ProfileInterface = () => {
     if (data) {
       try {
         setUserData(JSON.parse(data));
-      } catch (e) {
+      } catch {
         console.error('Failed to parse user data');
       }
     }

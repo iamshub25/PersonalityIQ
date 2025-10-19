@@ -3,54 +3,13 @@
 import React, { useState, useEffect } from 'react'
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [isSubscribing, setIsSubscribing] = useState(false)
-  const [isSubscribed, setIsSubscribed] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
-
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
-  }
-
-  const handleNewsletterSignup = async () => {
-    if (!email.trim() || !isValidEmail(email)) {
-      showMessage('Please enter a valid email address', 'error')
-      return
-    }
-
-    setIsSubscribing(true)
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubscribed(true)
-      setIsSubscribing(false)
-      setEmail('')
-      showMessage('Successfully subscribed to newsletter!', 'success')
-      
-      // Reset after 2 seconds
-      setTimeout(() => {
-        setIsSubscribed(false)
-      }, 2000)
-    }, 1500)
-  }
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleNewsletterSignup()
-    }
-  }
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
-  }
-
-  const showMessage = (message: string, type: 'success' | 'error' | 'info') => {
-    // Simple toast notification (you might want to use a proper toast library)
-    console.log(`${type}: ${message}`)
   }
 
   // Show/hide back to top button based on scroll

@@ -170,7 +170,7 @@ export const SidebarLink = ({
   className?: string;
   isActive?: boolean;
   onClick?: () => void;
-  props?: any;
+  props?: Record<string, unknown>;
 }) => {
   const { open, animate } = useSidebar();
   return (

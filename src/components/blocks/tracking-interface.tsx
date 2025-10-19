@@ -10,7 +10,7 @@ function cn(...classes: (string | undefined | null | false)[]): string {
 }
 
 export const TrackingInterface = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [, setSelectedDate] = useState<Date | null>(null);
   const currentStreak = 7;
   const longestStreak = 15;
   const totalTests = 23;

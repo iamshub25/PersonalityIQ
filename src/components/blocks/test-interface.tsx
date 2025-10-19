@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export const TestInterface = () => {
   return (
@@ -21,12 +20,12 @@ export const TestInterface = () => {
       <div className="relative z-10 h-full flex items-center px-8 md:px-16 lg:px-24">
         <div className="max-w-2xl space-y-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-normal text-[#1a1a1a] leading-tight">
-            You're not stuck.<br />
-            You're standing at<br />
+            You&apos;re not stuck.<br />
+            You&apos;re standing at<br />
             a doorway.
           </h1>
           <p className="text-lg md:text-xl text-[#1a1a1a] leading-relaxed max-w-xl">
-            This isn't just career advice, It's a personalized map to help you rewrite your story — based on your goals, your life, and your mindset.
+            This isn&apos;t just career advice, It&apos;s a personalized map to help you rewrite your story — based on your goals, your life, and your mindset.
           </p>
 
           <div className="space-y-4">

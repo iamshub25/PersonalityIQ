@@ -10,7 +10,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-base sm:text-lg text-[#2C5E4D] leading-relaxed mb-8 sm:mb-10 px-2">
-          This isn't about finding another job. It's about uncovering the work you were meant to do. 
+          This isn&apos;t about finding another job. It&apos;s about uncovering the work you were meant to do. 
           Our insight-driven process helps you filter out the noise by decoding your personal motivations, 
           helping you build a practical roadmap based on your true, untapped potential.
         </p>

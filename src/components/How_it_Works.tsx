@@ -10,7 +10,7 @@ export default function ProcessSection() {
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-[#2C5E4D] leading-relaxed mb-10 sm:mb-16 md:mb-20 px-2">
           Before suggesting your next move, we listen. Our system decodes your motivations,
-          fears, and aspirations to design a path that feels like yours — not someone else's.
+          fears, and aspirations to design a path that feels like yours — not someone else&apos;s.
         </p>
 
         {/* Cards */}
@@ -34,7 +34,7 @@ export default function ProcessSection() {
               Get Decoded, Not Judged
             </h3>
             <p className="text-[#2C5E4D] text-sm sm:text-base md:text-lg leading-relaxed">
-              Our AI doesn't label you — it listens. It synthesizes your strengths, hidden
+              Our AI doesn&apos;t label you — it listens. It synthesizes your strengths, hidden
               fears, and life constraints to reveal venture paths that truly align with your reality.
             </p>
           </div>

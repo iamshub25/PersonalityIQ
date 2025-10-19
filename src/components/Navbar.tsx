@@ -7,10 +7,9 @@ import { usePathname } from 'next/navigation'
 
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {

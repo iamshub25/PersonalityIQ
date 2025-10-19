@@ -147,7 +147,7 @@ const AuthPage = () => {
           confirmButtonColor: '#6366F1'
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Request failed:', error);
 
       // Handle API error responses
@@ -167,8 +167,8 @@ const AuthPage = () => {
             errorMessage = responseData.responseMessage.replace(/ERRSIGN\d+:\s?/g, '');
           }
         }
-      } else if (error?.message) {
-        errorMessage = error.message;
+      } else if (error && typeof error === 'object' && 'message' in error) {
+        errorMessage = String(error.message);
       }
 
       await Swal.fire({
