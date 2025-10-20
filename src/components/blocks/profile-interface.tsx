@@ -52,26 +52,26 @@ export const ProfileInterface = () => {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="flex items-start gap-3 p-4 bg-gray-200 rounded-lg">
               <Mail className="h-5 w-5 text-gray-600 dark:text-gray-400 mt-0.5" />
               <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Email</p>
+                <p className="text-sm font-medium text-gray-800">Email</p>
                 <p className="text-base font-semibold">{userEmail || 'Not available'}</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="flex items-start gap-3 p-4 bg-gray-200 rounded-lg">
               <Calendar className="h-5 w-5 text-gray-600 dark:text-gray-400 mt-0.5" />
               <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Member Since</p>
+                <p className="text-sm font-medium text-gray-800">Member Since</p>
                 <p className="text-base font-semibold">{new Date().toLocaleDateString()}</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="flex items-start gap-3 p-4 bg-gray-200 rounded-lg">
               <Shield className="h-5 w-5 text-gray-600 dark:text-gray-400 mt-0.5" />
               <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Account Status</p>
+                <p className="text-sm font-medium text-gray-800">Account Status</p>
                 <p className="text-base font-semibold text-green-600">Verified</p>
               </div>
             </div>

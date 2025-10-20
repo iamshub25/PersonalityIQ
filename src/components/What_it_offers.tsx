@@ -2,7 +2,7 @@ import { Lightbulb, Lock, Compass } from "lucide-react";
 
 export default function SiteOffers() {
   return (
-    <section className="bg-[#FAF8F4] min-h-screen flex items-center px-4 sm:px-6 py-12 sm:py-16">
+    <section className="bg-[#FFFF] min-h-screen flex items-center px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto text-center w-full">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-[#0A2342] mb-10 sm:mb-16 md:mb-20">
           What This Site Offers
