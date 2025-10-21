@@ -4,13 +4,25 @@ import { useState, useEffect } from 'react'
 import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Swal from 'sweetalert2'
 
 
 export default function Navbar() {
   const [, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [username, setUsername] = useState('')
+  const [showDropdown, setShowDropdown] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMounted(true)
+    const token = localStorage.getItem('authToken')
+    const name = localStorage.getItem('username')
+    setIsAuthenticated(!!token)
+    setUsername(name || '')
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +33,9 @@ export default function Navbar() {
       const target = event.target as Element
       if (!target.closest('nav') && isMobileMenuOpen) {
         setIsMobileMenuOpen(false)
+      }
+      if (!target.closest('.profile-dropdown') && showDropdown) {
+        setShowDropdown(false)
       }
     }
 
@@ -34,11 +49,14 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
+    setShowDropdown(false)
   }, [pathname])
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
+    const name = localStorage.getItem('username')
     setIsAuthenticated(!!token)
+    setUsername(name || '')
   }, [pathname])
 
   const scrollToSection = (sectionId: string) => {
@@ -47,6 +65,42 @@ export default function Navbar() {
       element.scrollIntoView({ behavior: 'smooth' })
     }
     setIsMobileMenuOpen(false)
+  }
+
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title: 'Logout',
+      text: 'Are you sure you want to logout?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#EF4444',
+      cancelButtonColor: '#6B7280',
+      confirmButtonText: 'Yes, logout',
+      cancelButtonText: 'Cancel',
+      position: 'top-end',
+      toast: true,
+      width: '350px'
+    })
+
+    if (result.isConfirmed) {
+      localStorage.removeItem('authToken')
+      localStorage.removeItem('username')
+      localStorage.removeItem('userEmail')
+      localStorage.removeItem('userData')
+      setIsAuthenticated(false)
+      setShowDropdown(false)
+      
+      await Swal.fire({
+        icon: 'success',
+        title: 'Logged out successfully',
+        timer: 1500,
+        showConfirmButton: false,
+        position: 'top-end',
+        toast: true
+      })
+      
+      window.location.href = '/'
+    }
   }
 
   // const navItems = [
@@ -98,15 +152,42 @@ export default function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-            {pathname !== '/login' && !isAuthenticated && (
-              <Link href="/login" className="flex  border border-gray-600 text-gray-800 hover:bg-gray-800 hover:text-white px-4 lg:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm lg:text-base items-center gap-1">
-               Sign In 
-               {/* <ArrowRight size={18}/> */}
+            {!mounted ? (
+              <div className="w-24 h-10"></div>
+            ) : isAuthenticated ? (
+              <div className="relative profile-dropdown">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-800 font-medium text-sm">Hi, {username}</span>
+                  <button
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-semibold text-sm cursor-pointer hover:opacity-90 transition-opacity"
+                  >
+                    {username.charAt(0).toUpperCase()}
+                  </button>
+                </div>
+                {showDropdown && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                    <Link
+                      href="/dashboard?tab=profile"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      Profile
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer  "
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : pathname !== '/login' && (
+              <Link href="/login" className="flex border border-gray-600 text-gray-800 hover:bg-gray-800 hover:text-white px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all text-sm lg:text-base items-center gap-1">
+               Sign In
               </Link>
             )}
-            {/* <Link href="/" className="flex  border border-gray-600 text-gray-800 hover:bg-gray-800 hover:text-white px-4 lg:px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all text-sm lg:text-base items-center gap-1">
-             Get Started<ArrowRight size={18}/>
-            </Link> */}
           </div>
 
         </div>

@@ -12,7 +12,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#FAF8F4] px-4 sm:px-6 py-16 sm:py-20 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-bg.svg)' }}>
+    <section className="min-h-screen flex items-center justify-center bg-[#FAF8F4] px-4 sm:px-6 py-16 sm:py-20 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://res.cloudinary.com/dyd30abcs/image/upload/v1761026560/Untitled_design_1_z9n4yf.svg)' }}>
       <div className="max-w-3xl text-center w-full">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-[#0A2342] leading-tight mb-4 sm:mb-6">
           The First Draft Built Your Career. <br className="hidden sm:block" />

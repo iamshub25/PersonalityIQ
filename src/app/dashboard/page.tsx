@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 import { 
   FileText, 
   BarChart3, 
@@ -35,13 +36,50 @@ interface Links {
     }
   }, [router]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tab = params.get('tab');
+    if (tab === 'profile') {
+      setActiveTab('profile');
+    }
+  }, []);
+
   if (!isAuthenticated) {
     return null;
   }
 
-  const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    router.push('/login');
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title: 'Logout',
+      text: 'Are you sure you want to logout?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#EF4444',
+      cancelButtonColor: '#6B7280',
+      confirmButtonText: 'Yes, logout',
+      cancelButtonText: 'Cancel',
+      position: 'top-end',
+      toast: true,
+      width: '350px'
+    });
+
+    if (result.isConfirmed) {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('username');
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('userData');
+      
+      await Swal.fire({
+        icon: 'success',
+        title: 'Logged out successfully',
+        timer: 1500,
+        showConfirmButton: false,
+        position: 'top-end',
+        toast: true
+      });
+      
+      router.push('/login');
+    }
   };
 
   const links = [

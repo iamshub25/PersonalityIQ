@@ -97,13 +97,23 @@ const AuthPage = () => {
           password
         });
 
+        // Check for error in response body even if HTTP status is 200
+        if (response.data.responseCode === 400 || response.data.responseCode === 401) {
+          const error: any = new Error(response.data.responseMessage);
+          error.response = { data: response.data };
+          throw error;
+        }
+
         console.log('Signup successful:', response.data);
         localStorage.setItem('username', `${firstName} ${lastName}`);
         await Swal.fire({
           icon: 'success',
-          title: 'Account created',
-          text: 'Your account was created successfully. Please sign in.',
-          confirmButtonColor: '#6366F1'
+          title: 'Account created successfully',
+          text: 'Please sign in.',
+          position: 'top-end',
+          toast: true,
+          timer: 3000,
+          showConfirmButton: false
         });
         // Optionally switch to login mode
         setMode('login');
@@ -112,6 +122,13 @@ const AuthPage = () => {
           username: email,
           password
         });
+
+        // Check for error in response body even if HTTP status is 200
+        if (response.data.responseCode === 401) {
+          const error: any = new Error(response.data.responseMessage);
+          error.response = { data: response.data };
+          throw error;
+        }
 
         console.log('Login successful:', response.data);
         localStorage.setItem('authToken', response.data.token || 'authenticated');
@@ -129,11 +146,11 @@ const AuthPage = () => {
         
         await Swal.fire({
           icon: 'success',
-          title: 'Signed in',
-          text: 'Welcome back!',
-          timer: 1400,
-          showConfirmButton: false,
-          timerProgressBar: true
+          title: 'Signed in successfully',
+          position: 'top-end',
+          toast: true,
+          timer: 1500,
+          showConfirmButton: false
         });
         router.push('/dashboard');
       } else {
@@ -141,30 +158,42 @@ const AuthPage = () => {
         await new Promise(resolve => setTimeout(resolve, 1000));
         await Swal.fire({
           icon: 'success',
-          title: 'Reset sent',
-          text: 'If that email exists, we sent a password reset link.',
-          confirmButtonColor: '#6366F1'
+          title: 'Reset link sent',
+          text: 'Check your email',
+          position: 'top-end',
+          toast: true,
+          timer: 3000,
+          showConfirmButton: false
         });
       }
     } catch (error: unknown) {
-      console.error('Request failed:', error);
-
       // Handle API error responses
       let errorTitle = 'Error';
       let errorMessage = 'An unexpected error occurred';
 
-      if (axios.isAxiosError(error)) {
-        const responseData = error.response?.data;
-        
-        if (responseData?.responseMessage) {
-          // Handle specific API error codes
-          if (responseData.responseCode === 401 && responseData.responseMessage.includes('ERRSIGN1001')) {
+      const responseData = axios.isAxiosError(error) 
+        ? error.response?.data 
+        : (error && typeof error === 'object' && 'response' in error) 
+          ? (error as any).response?.data 
+          : null;
+
+      if (responseData?.responseMessage) {
+        // Handle specific API error codes
+        if (responseData.responseCode === 401) {
+          if (responseData.responseMessage.includes('ERRSIGN1001')) {
             errorTitle = 'Authentication Failed';
             errorMessage = 'Invalid username or password';
+          } else if (responseData.responseMessage.includes('ERRSIGN1002')) {
+            errorTitle = 'Email Not Verified';
+            errorMessage = 'Please verify your email address before signing in. Check your inbox for the verification link.';
           } else {
-            // Use API provided message but clean up error codes
             errorMessage = responseData.responseMessage.replace(/ERRSIGN\d+:\s?/g, '');
           }
+        } else if (responseData.responseCode === 400 && responseData.responseMessage.includes('ERR10001')) {
+          errorTitle = 'Registration Failed';
+          errorMessage = 'This email is already registered. Please sign in instead.';
+        } else {
+          errorMessage = responseData.responseMessage.replace(/(ERRSIGN\d+|ERR\d+):\s?/g, '');
         }
       } else if (error && typeof error === 'object' && 'message' in error) {
         errorMessage = String(error.message);
@@ -174,7 +203,10 @@ const AuthPage = () => {
         icon: 'error',
         title: errorTitle,
         text: errorMessage,
-        confirmButtonColor: '#EF4444'
+        position: 'top-end',
+        toast: true,
+        timer: 4000,
+        showConfirmButton: false
       });
     } finally {
       setIsLoading(false);
